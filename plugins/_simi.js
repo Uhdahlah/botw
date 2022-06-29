@@ -7,10 +7,8 @@ handler.before = async (m) => {
         if (/^.*false|disnable|(turn)?off|0/i.test(m.text)) return
         if (!m.text) return
         let res = await fetch(global.API('pencarikode', '/api/simsimii', { text: encodeURIComponent(m.text) }, 'apikey'))
-        if (!res.ok) throw await `${res.status} ${res.statusText}`
         let json = await res.json()
-        if (json.result == 'ga paham kak ajari aku donk') await m.reply('belum di ajarin kak, ajarin di wa.me/6285749435535')
-        else await m.reply(`*Simi:* ${json.result}`)
+        else await m.reply(`bot: ${json.success}`)
         return !0
     }
     return true
