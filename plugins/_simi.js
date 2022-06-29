@@ -9,7 +9,7 @@ handler.before = async (m) => {
         let res = await fetch(global.API('pencarikode', '/api/simsimii', { text: encodeURIComponent(m.text) }, 'apikey'))
         if (!res.ok) throw await `${res.status} ${res.statusText}`
         let json = await res.json()
-        if (json.result == 'Aku tidak mengerti apa yang kamu katakan.Tolong ajari aku.') await m.reply('siminya blom diajarin, ajarin di https://simsimi.com/teach')
+        if (json.result == 'ga paham kak ajari aku donk') await m.reply('belum di ajarin kak, ajarin di wa.me/6285749435535')
         else await m.reply(`*Simi:* ${json.result}`)
         return !0
     }
