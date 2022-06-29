@@ -18,7 +18,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
         let json = await res.json()
         await m.reply(global.wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.nowm, '', '© stikerin', m)
+        await this.sendFile(m.chat, json.nowm, '', '© wa-bot', m)
     }
 
     if (/^.*cocofun/i.test(m.text)) {
@@ -27,7 +27,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
         let json = await res.json()
         await m.reply(global.wait)
         m.reply(util.format(json))
-        await this.sendFile(m.chat, json.download, '', '© shiraori', m)
+        await this.sendFile(m.chat, json.download, '', '© whatsapp-bot', m)
     }
 
     if (/^.*(fb.watch|facebook.com)/i.test(m.text)) {
@@ -60,7 +60,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
             if (!json.status) return m.reply(`Tidak dapat diunduh`)
             await m.reply(global.wait)
             m.reply(util.format(json))
-            await this.sendFile(m.chat, json.data.url, '', '© shiraori', m)
+            await this.sendFile(m.chat, json.data.url, '', '© wa-bot', m)
         }).catch(_ => _)
     }
 
@@ -90,7 +90,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
                 usedServer = server
                 break
             } catch (e) {
-                m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+                m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmengganti ke server lain...'}`)
             }
         }
         if (yt === false) throw 'semua server gagal'
@@ -102,7 +102,7 @@ handler.all = async function (m, { isPrems, isOwner }) {
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
           `.trim(),
-            await (await fetch(thumb)).buffer(), '© shiraori', 'AUDIO', `.yta ${vid.url}`, 'VIDEO', `.yt ${vid.url}`)
+            await (await fetch(thumb)).buffer(), '© whatsapp-bot', 'AUDIO', `.yta ${vid.url}`, 'VIDEO', `.yt ${vid.url}`)
     }
 
 }
